@@ -1,0 +1,47 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}\\bin\\cli-get-datasets",
+			"stopOnEntry": false,
+			"args": [
+				"-c",
+				"SupportDemo",
+				"-k",
+				"Y7RBnOHgcpQTmxsjqH2CYhzZwK2Yp96p3iLWcYU3wKji7Mb0qudBFU5NAvlrUbhXuXNSbZUkWPWGkfAimiuXzw==",
+				"-w",
+				"a842fb45-514d-436a-b0e9-5529720d4868"
+			],
+			"cwd": "${workspaceRoot}",
+			"preLaunchTask": null,
+			"runtimeExecutable": null,
+			"runtimeArgs": [
+				"--nolazy"
+			],
+			"env": {
+				"https_proxy": "http://127.0.0.1:8888",
+				"http_proxy": "http:127.0.0.1:8888",
+				"NODE_TLS_REJECT_UNAUTHORIZED": "0",
+				"NODE_ENV": "development"
+			},
+			"externalConsole": false,
+			"sourceMaps": false,
+			"outDir": null
+		},
+		{
+			"name": "Attach",
+			"type": "node",
+			"request": "attach",
+			"port": 5858,
+			"address": "localhost",
+			"restart": false,
+			"sourceMaps": false,
+			"outDir": null,
+			"localRoot": "${workspaceRoot}",
+			"remoteRoot": null
+		}
+	]
+}

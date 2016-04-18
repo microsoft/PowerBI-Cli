@@ -1,0 +1,21 @@
+{
+  "name": "powerbi-node-provision",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PowerBI <nugetpowerbi@microsoft.com> (https://dev.powerbi.com)",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "powerbi": "./bin/cli"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "lodash": "^4.11.1",
+    "ms-rest": "^1.12.0"
+  }
+}

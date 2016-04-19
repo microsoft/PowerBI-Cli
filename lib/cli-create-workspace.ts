@@ -37,7 +37,7 @@ export module CliCreateWorkspace {
                 if (err) {
                     cli.error(err.message);
                 } else {
-                    cli.print(util.format('Workspace created: %s', result.workspaceId));
+                    cli.print('Workspace created: %s', result.workspaceId);
                 }
             });
         } catch (_error) {

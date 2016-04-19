@@ -51,7 +51,7 @@ export module CliImport {
                 throw new Error(util.format('File "%s" not found', settings.file));
             }
 
-            cli.print(util.format('Importing %s to workspace: %s', settings.file, settings.workspace));
+            cli.print('Importing %s to workspace: %s', settings.file, settings.workspace);
 
             client.imports.uploadFile(settings.collection, settings.workspace, settings.file, options, (err, result, request, response) => {
                 if (err) {
@@ -61,7 +61,7 @@ export module CliImport {
                 let importResult: powerbi.ImportModel = result;
 
                 cli.print('File uploaded successfully');
-                cli.print(util.format('Import ID: %s', importResult.id));
+                cli.print('Import ID: %s', importResult.id);
 
                 checkImportState(client, importResult, (importStateErr, importStateResult) => {
                     if (importStateErr) {
@@ -82,7 +82,7 @@ export module CliImport {
     function checkImportState(client: powerbi.PowerBIClient, importResult: powerbi.ImportModel, callback) {
         client.imports.getImportById(settings.collection, settings.workspace, importResult.id, (err, result) => {
             importResult = result;
-            cli.print(util.format('Checking import state: %s', importResult.importState));
+            cli.print('Checking import state: %s', importResult.importState);
 
             if (importResult.importState === 'Succeeded' || importResult.importState === 'Failed') {
                 callback(null, importResult);

@@ -5,14 +5,9 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}\\bin\\cli-import",
+			"program": "${workspaceRoot}\\bin\\cli-get-datasets",
 			"stopOnEntry": false,
 			"args": [
-				"-f",
-				"c:\\users\\wabreza\\desktop\\progress.pbix",
-				"-n",
-				"Progress",
-				"-o"
 			],
 			"cwd": "${workspaceRoot}",
 			"preLaunchTask": null,

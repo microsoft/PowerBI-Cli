@@ -44,8 +44,8 @@ export module CliUpdateConnection {
                 }
 
                 cli.print('Found dataset!');
-                cli.print(util.format('Id: %s', result.id));
-                cli.print(util.format('Name: %s', result.name));
+                cli.print('Id: %s', result.id);
+                cli.print('Name: %s', result.name);
 
                 if (result.datasources.length > 0) {
                     cli.print('==============================');
@@ -54,8 +54,8 @@ export module CliUpdateConnection {
                 }
 
                 result.datasources.forEach(datasource => {
-                    cli.print(util.format('Name: %s', datasource.name));
-                    cli.print(util.format('Connection String: %s', datasource.connectionString));
+                    cli.print('Name: %s', datasource.name);
+                    cli.print('Connection String: %s', datasource.connectionString);
                 });
             });
 

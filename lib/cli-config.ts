@@ -40,7 +40,7 @@ export module CliConfig {
         config.set(currentConfig);
         
         for (var key in currentConfig) {
-            cli.print(util.format('%s: %s', key, currentConfig[key]));
+            cli.print('%s: %s', key, currentConfig[key]);
         }
     } catch (err) {
         cli.error(err);

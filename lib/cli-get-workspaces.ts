@@ -38,6 +38,14 @@ export module CliGetWorkspaces {
                 } else {
                     let workspaces = result.value;
 
+                    if (workspaces.length == 0) {
+                        return cli.warn('No workspaces found within collection: %s', settings.collection);
+                    }
+                    
+                    cli.print("================================================");
+                    cli.print('Gettings workspaces for Collection: %s', settings.collection);
+                    cli.print("================================================");
+
                     result.value.forEach(workspace => {
                         cli.print(workspace.workspaceId);
                     });

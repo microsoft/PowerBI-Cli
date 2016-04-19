@@ -41,11 +41,15 @@ export module CliGetDatasets {
                     let datasets = result.value;
 
                     if (datasets.length === 0) {
-                        cli.warn(util.format('No datasets found within workspace: %s', settings.workspace));
+                        return cli.warn('No datasets found within workspace: %s', settings.workspace);
                     }
 
+                    cli.print('=========================================');
+                    cli.print('Gettings datasets for Collection: %s', settings.workspace);
+                    cli.print('=========================================');
+
                     datasets.forEach(dataset => {
-                        cli.print(util.format('ID: %s | Name: %s', dataset.id, dataset.name));
+                        cli.print('ID: %s | Name: %s', dataset.id, dataset.name);
                     });
                 }
             });

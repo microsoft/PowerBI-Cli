@@ -53,10 +53,10 @@ export module CliUpdateConnection {
                     cli.print('==============================');
                 }
 
-                for (let i = 0; i < result.datasources.length; i++) {
-                    cli.print(util.format('Name: %s', result.datasources[i].name));
-                    cli.print(util.format('Connection String: %s', result.datasources[i].connectionString));
-                }
+                result.datasources.forEach(datasource => {
+                    cli.print(util.format('Name: %s', datasource.name));
+                    cli.print(util.format('Connection String: %s', datasource.connectionString));
+                });
             });
 
         } catch (err) {

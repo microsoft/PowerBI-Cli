@@ -20,7 +20,7 @@ export class Config {
      * Stores the configuration values
      */
     public static set(settings): void {
-        fs.writeFileSync(filePath, JSON.stringify(settings));
+        fs.writeFileSync(filePath, JSON.stringify(settings, null, 4));
     }
 
     public static merge(settings): any {

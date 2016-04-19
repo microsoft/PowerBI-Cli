@@ -30,15 +30,15 @@ export module CliConfig {
         let properties = ['collection', 'workspace', 'accessKey', 'baseUri'];
 
         let currentConfig = config.get();
-
-        for (let i = 0; i < properties.length; i++) {
-            if (program[properties[i]]) {
-                currentConfig[properties[i]] = program[properties[i]];
+        
+        properties.forEach(key => {
+            if (program[key]) {
+                currentConfig[key] = program[key];
             }
-        }
+        });
 
         config.set(currentConfig);
-
+        
         for (var key in currentConfig) {
             cli.print(util.format('%s: %s', key, currentConfig[key]));
         }

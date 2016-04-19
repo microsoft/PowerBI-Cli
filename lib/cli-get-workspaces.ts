@@ -38,9 +38,9 @@ export module CliGetWorkspaces {
                 } else {
                     let workspaces = result.value;
 
-                    for (let i = 0; i < workspaces.length; i++) {
-                        cli.print(workspaces[i].workspaceId);
-                    }
+                    result.value.forEach(workspace => {
+                        cli.print(workspace.workspaceId);
+                    });
                 }
             });
         } catch (_error) {

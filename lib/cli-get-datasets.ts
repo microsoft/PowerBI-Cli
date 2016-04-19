@@ -44,9 +44,9 @@ export module CliGetDatasets {
                         cli.warn(util.format('No datasets found within workspace: %s', settings.workspace));
                     }
 
-                    for (let i = 0; i < datasets.length; i++) {
-                        cli.print(util.format('ID: %s | Name: %s', datasets[i].id, datasets[i].name));
-                    }
+                    datasets.forEach(dataset => {
+                        cli.print(util.format('ID: %s | Name: %s', dataset.id, dataset.name));
+                    });
                 }
             });
         } catch (_error) {

@@ -17,7 +17,8 @@
     "showOutput": "silent",
     // args is the HelloWorld program to compile.
     "args": [
-        "index.ts"
+        "index.ts",
+		"--sourcemap"
     ],
     // use the standard tsc problem matcher to find compile problems
     // in the output.

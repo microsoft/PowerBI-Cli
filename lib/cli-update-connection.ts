@@ -1,12 +1,10 @@
-/// <reference path="../typings/main.d.ts" />
-'use strict';
 import * as powerbi from 'powerbi-api';
 import * as msrest from 'ms-rest';
-import {Cli as cli} from './cli';
 import * as fs from 'fs';
+import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module UpdateConnection {
+export module CliUpdateConnection {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -42,22 +40,22 @@ export module UpdateConnection {
 
             client.datasets.getDatasetById(settings.collection, settings.workspace, settings.datasetId, (err, result) => {
                 if (err) {
-                    return cli.error(err);
+                    return cli.error(err.message);
                 }
 
-                cli.print({ message: 'Found dataset!' });
-                cli.print({ message: util.format('Id: %s', result.id) });
-                cli.print({ message: util.format('Name: %s', result.name) });
+                cli.print('Found dataset!');
+                cli.print(util.format('Id: %s', result.id));
+                cli.print(util.format('Name: %s', result.name));
 
                 if (result.datasources.length > 0) {
-                    cli.print({ message: '==============================' });
-                    cli.print({ message: 'Datasources' });
-                    cli.print({ message: '==============================' });
+                    cli.print('==============================');
+                    cli.print('Datasources');
+                    cli.print('==============================');
                 }
 
                 for (let i = 0; i < result.datasources.length; i++) {
-                    cli.print({ message: util.format('Name: %s', result.datasources[i].name) })
-                    cli.print({ message: util.format('Connection String: %s', result.datasources[i].connectionString) })
+                    cli.print(util.format('Name: %s', result.datasources[i].name));
+                    cli.print(util.format('Connection String: %s', result.datasources[i].connectionString));
                 }
             });
 

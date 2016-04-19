@@ -1,9 +1,7 @@
-/// <reference path="../typings/main.d.ts" />
-'use strict';
 import * as powerbi from 'powerbi-api';
 import * as msrest from 'ms-rest';
-import {Cli as cli} from './cli';
 import * as fs from 'fs';
+import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
 export module CliConfig {
@@ -42,7 +40,7 @@ export module CliConfig {
         config.set(currentConfig);
 
         for (var key in currentConfig) {
-            cli.print({ message: util.format('%s: %s', key, currentConfig[key]) });
+            cli.print(util.format('%s: %s', key, currentConfig[key]));
         }
     } catch (err) {
         cli.error(err);

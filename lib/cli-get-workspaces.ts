@@ -1,11 +1,9 @@
-/// <reference path="../typings/main.d.ts" />
-'use strict';
 import * as powerbi from 'powerbi-api';
 import * as msrest from 'ms-rest';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module GetWorkspaces {
+export module CliGetWorkspaces {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -36,18 +34,18 @@ export module GetWorkspaces {
 
             client.workspaces.getWorkspacesByCollectionName(settings.collection, (err, result) => {
                 if (err) {
-                    cli.error(err);
+                    cli.error(err.message);
                 } else {
                     let workspaces = result.value;
 
                     for (let i = 0; i < workspaces.length; i++) {
-                        cli.print({ message: workspaces[i].workspaceId });
+                        cli.print(workspaces[i].workspaceId);
                     }
                 }
             });
         } catch (_error) {
             err = _error;
-            cli.error({ message: err });
+            cli.error(err);
         }
     }
 }

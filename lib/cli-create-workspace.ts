@@ -1,12 +1,9 @@
-/// <reference path="../typings/main.d.ts" />
-
-'use strict';
 import * as powerbi from 'powerbi-api';
 import * as msrest from 'ms-rest';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module CreateWorkspace {
+export module CliCreateWorkspace {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -38,14 +35,14 @@ export module CreateWorkspace {
 
             client.workspaces.postWorkspace(settings.collection, (err, result) => {
                 if (err) {
-                    cli.error(err);
+                    cli.error(err.message);
                 } else {
-                    cli.print({ message: util.format('Workspace created: %s', result.workspaceId) });
+                    cli.print(util.format('Workspace created: %s', result.workspaceId));
                 }
             });
         } catch (_error) {
             err = _error;
-            cli.error({ message: err });
+            cli.error(err.message);
         }
     }
 }

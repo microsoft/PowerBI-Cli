@@ -1,32 +1,28 @@
-/// <reference path="../typings/main.d.ts" />
+let colors = require('colors');
+let pkg = require("../package.json");
+let _ = require('lodash');
 
-'use strict';
+const defaults: any = { color: 'white' };
 
-export module Cli {
-    let colors = require('colors');
-    let pkg = require("../package.json");
+export class Cli {
+    public static print(message: string, options?: any): void {
+        Cli.write(message, _.merge({}, defaults, options, { color: 'cyan' }));
+    }
 
-    export function print(options) {
-        if (options && options.message && typeof options.message === 'string') {
-            return console.log("[", "powerbi"["white"], "]", options.message.toString().cyan);
+    public static warn(message: string, options?: any): void {
+        Cli.write(message, _.merge({}, defaults, options, { color: 'yellow' }));
+    }
+
+    public static error(message: string, options?: any): void {
+        Cli.write(message, _.merge({}, defaults, options, { color: 'red' }));
+    }
+
+    private static write(message, options?: any): void {
+        if (message && typeof message === 'string') {
+            return console.log("[", "powerbi"["white"], "]", message.toString()[options.color]);
         } else {
             throw new Error('no message defined to print!');
         }
     }
-    
-    export function warn(options){
-        if (options && options.message && typeof options.message === 'string') {
-            return console.log("[", "powerbi"["white"], "]", options.message.toString().yellow);
-        } else {
-            throw new Error('no message defined to print!');
-        }
-    }
-    
-    export function error(options){
-        if (options && options.message && typeof options.message === 'string') {
-            return console.log("[", "powerbi"["white"], "]", options.message.toString().red);
-        } else {
-            throw new Error('no message defined to print!');
-        }
-    }
+
 }

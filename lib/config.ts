@@ -1,15 +1,13 @@
-'use strict';
-
 import * as fs from 'fs';
 import * as _ from 'lodash'
 
-export module Config {
-    const filePath: string = '.powerbirc';
+const filePath: string = '.powerbirc';
 
+export class Config {
     /**
      * Gets the saved configuration values
      */
-    export function get() {
+    public static get(): any {
         if (!fs.existsSync(filePath)) {
             return {};
         }
@@ -21,11 +19,11 @@ export module Config {
     /**
      * Stores the configuration values
      */
-    export function set(settings) {
+    public static set(settings): void {
         fs.writeFileSync(filePath, JSON.stringify(settings));
     }
-    
-    export function merge(settings){
-        return _.merge(get(), settings);
+
+    public static merge(settings): any {
+        return _.merge(Config.get(), settings);
     }
 }

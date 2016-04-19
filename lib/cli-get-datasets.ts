@@ -1,11 +1,9 @@
-/// <reference path="../typings/main.d.ts" />
-'use strict';
 import * as powerbi from 'powerbi-api';
 import * as msrest from 'ms-rest';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module GetDatasets {
+export module CliGetDatasets {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -38,22 +36,22 @@ export module GetDatasets {
 
             client.datasets.getDatasets(settings.collection, settings.workspace, (err, result) => {
                 if (err) {
-                    cli.error(err);
+                    cli.error(err.message);
                 } else {
                     let datasets = result.value;
 
                     if (datasets.length === 0) {
-                        cli.warn({ message: util.format('No datasets found within workspace: %s', settings.workspace) });
+                        cli.warn(util.format('No datasets found within workspace: %s', settings.workspace));
                     }
 
                     for (let i = 0; i < datasets.length; i++) {
-                        cli.print({ message: util.format('ID: %s | Name: %s', datasets[i].id, datasets[i].name) });
+                        cli.print(util.format('ID: %s | Name: %s', datasets[i].id, datasets[i].name));
                     }
                 }
             });
         } catch (_error) {
             err = _error;
-            cli.error({ message: err });
+            cli.error(err.message);
         }
     }
 }

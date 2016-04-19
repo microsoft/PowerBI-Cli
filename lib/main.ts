@@ -1,13 +1,12 @@
 /// <reference path="../typings/main.d.ts" />
 
-'use strict'
 import {Cli} from './cli';
 import {CliConfig} from './cli-config';
-import {CreateWorkspace} from './cli-create-workspace';
-import {GetWorkspaces} from './cli-Get-workspaces';
-import {Import} from './cli-import';
-import {GetDatasets} from './cli-get-datasets';
-import {UpdateConnection} from './cli-update-connection';
+import {CliCreateWorkspace} from './cli-create-workspace';
+import {CliGetWorkspaces} from './cli-Get-workspaces';
+import {CliImport} from './cli-import';
+import {CliGetDatasets} from './cli-get-datasets';
+import {CliUpdateConnection} from './cli-update-connection';
 
 export module Main {
     let program = require('commander');

@@ -5,15 +5,14 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}\\bin\\cli-get-datasets",
+			"program": "${workspaceRoot}\\bin\\cli-import",
 			"stopOnEntry": false,
 			"args": [
-				"-c",
-				"SupportDemo",
-				"-k",
-				"Y7RBnOHgcpQTmxsjqH2CYhzZwK2Yp96p3iLWcYU3wKji7Mb0qudBFU5NAvlrUbhXuXNSbZUkWPWGkfAimiuXzw==",
-				"-w",
-				"a842fb45-514d-436a-b0e9-5529720d4868"
+				"-f",
+				"c:\\users\\wabreza\\desktop\\progress.pbix",
+				"-n",
+				"Progress",
+				"-o"
 			],
 			"cwd": "${workspaceRoot}",
 			"preLaunchTask": null,
@@ -28,7 +27,7 @@
 				"NODE_ENV": "development"
 			},
 			"externalConsole": false,
-			"sourceMaps": false,
+			"sourceMaps": true,
 			"outDir": null
 		},
 		{

@@ -10,6 +10,11 @@ export class Cli {
         var params = Array.prototype.slice.call(arguments, 1);
         Cli.write(arguments[0], params, { color: 'cyan' });
     }
+    
+    public static success(message: string, ...args: any[]): void {
+        var params = Array.prototype.slice.call(arguments, 1);
+        Cli.write(arguments[0], params, { color: 'green' });
+    }
 
     public static warn(message: string, ...args: any[]): void {
         var params = Array.prototype.slice.call(arguments, 1);

@@ -16,11 +16,11 @@ export module Main {
 
     program.version(pkg.version)
         .command('config', 'Set default configuration values')
-        .command('create-workspace', 'Create a new workspace within an existing workspace collection')
         .command('get-workspaces', 'Gets a list of workspaces within an existing workspace collection')
-        .command('update-connection', 'Update the connection string for a datasource')
+        .command('create-workspace', 'Create a new workspace within an existing workspace collection')
         .command('import', 'Import a PBIX file to a workspace')
-        .command('get-datasets', 'Gets a list of datasets within a workspace');
+        .command('get-datasets', 'Gets a list of datasets within a workspace')
+        .command('update-connection', 'Update the connection string for a datasource');        
 
     program.on('--help', function () {
         console.log('  Examples:');

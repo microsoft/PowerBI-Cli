@@ -5,9 +5,17 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}\\bin\\cli-get-datasets",
+			"program": "${workspaceRoot}\\bin\\cli-update-connection",
 			"stopOnEntry": false,
 			"args": [
+				"-d",
+				"de0c80c8-82a7-4bc3-8897-ece953f04cce",
+				"-u",
+				"wbreza@k9cgr9w6im",
+				"-p",
+				"p@55w0rd",
+				"--connectionString",
+				"Data Source=tcp:k9cgr9w6im.database.windows.net,1433;Initial Catalog=Progress-Prod;MultipleActiveResultSets=True"
 			],
 			"cwd": "${workspaceRoot}",
 			"preLaunchTask": null,

@@ -108,6 +108,10 @@ export module CliUpdateConnection {
 
             let datasource = datasources[0];
 
+            if (datasources.length > 1) {
+                cli.warn('Found multiple datasources, using datasource "%s" by default', datasource.id);
+            }
+
             let credentials: powerbi.BasicCredentials = {
                 username: settings.username,
                 password: settings.password

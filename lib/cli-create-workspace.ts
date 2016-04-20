@@ -18,11 +18,11 @@ export module CliCreateWorkspace {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi create-workspace -c MyWorkspace -k ABC123');
+        console.log('    $ powerbi create-workspace -c <collection> -k <accessKey>');
     });
 
     program.parse(process.argv);
-    
+
     let settings = config.merge(program);
 
     if (!(settings.collection && settings.accessKey)) {
@@ -35,14 +35,13 @@ export module CliCreateWorkspace {
 
             client.workspaces.postWorkspace(settings.collection, (err, result) => {
                 if (err) {
-                    cli.error(err.message);
-                } else {
-                    cli.print('Workspace created: %s', result.workspaceId);
+                    return cli.error(err);
                 }
+
+                cli.print('Workspace created: %s', result.workspaceId);
             });
-        } catch (_error) {
-            err = _error;
-            cli.error(err.message);
+        } catch (err) {
+            cli.error(err);
         }
     }
 }

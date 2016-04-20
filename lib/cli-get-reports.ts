@@ -3,7 +3,7 @@ import * as msrest from 'ms-rest';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module CliGetDatasets {
+export module CliGetReports {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -19,7 +19,7 @@ export module CliGetDatasets {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi get-datasets -c <collection> -w <workspace> -k <accessKey>');
+        console.log('    $ powerbi get-reports -c <collection> -w <workspace> -k <accessKey>');
     });
 
     program.parse(process.argv);
@@ -34,23 +34,23 @@ export module CliGetDatasets {
             let credentials = new msrest.TokenCredentials(token.generate(settings.accessKey), 'AppToken');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
-            client.datasets.getDatasets(settings.collection, settings.workspace, (err, result) => {
+            client.reports.getReports(settings.collection, settings.workspace, (err, result) => {
                 if (err) {
                     return cli.error(err);
                 }
                 
-                let datasets = result.value;
+                let reports = result.value;
 
-                if (datasets.length === 0) {
-                    return cli.warn('No datasets found within workspace: %s', settings.workspace);
+                if (reports.length === 0) {
+                    return cli.warn('No reports found within workspace: %s', settings.workspace);
                 }
 
                 cli.print('=========================================');
-                cli.print('Gettings datasets for Collection: %s', settings.workspace);
+                cli.print('Gettings reports for Collection: %s', settings.workspace);
                 cli.print('=========================================');
 
-                datasets.forEach(dataset => {
-                    cli.print('ID: %s | Name: %s', dataset.id, dataset.name);
+                reports.forEach(report => {
+                    cli.print('ID: %s | Name: %s', report.id, report.name);
                 });
             });
         } catch (err) {

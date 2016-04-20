@@ -24,7 +24,7 @@ export module CliImport {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi import -c MyWorkspace -k ABC123 -w ABC123 -f file.pbix');
+        console.log('    $ powerbi import -c <collection> -k <accessKey> -w <workspace> -f <file>');
     });
 
     program.parse(process.argv);
@@ -55,7 +55,7 @@ export module CliImport {
 
             client.imports.uploadFile(settings.collection, settings.workspace, settings.file, options, (err, result, request, response) => {
                 if (err) {
-                    return cli.error(err.message);
+                    return cli.error(err);
                 }
 
                 let importResult: powerbi.ImportModel = result;

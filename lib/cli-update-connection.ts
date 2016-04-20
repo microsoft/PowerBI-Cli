@@ -24,7 +24,7 @@ export module CliUpdateConnection {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi update-connection -c MyWorkspace -k ABC123 -w ABC123 -u username -p password -cs connectionString');
+        console.log('    $ powerbi update-connection -c <collection> -k <accessKey> -w <workspace> -u [username] -p [password] -cs [connectionString]');
     });
 
     program.parse(process.argv);
@@ -40,7 +40,7 @@ export module CliUpdateConnection {
 
             client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (err, result) => {
                 if (err) {
-                    return cli.error(err.message);
+                    return cli.error(err);
                 }
 
                 cli.success('Found dataset!');
@@ -68,7 +68,7 @@ export module CliUpdateConnection {
         client.datasets.setAllConnections(settings.collection, settings.workspace, settings.dataset, params, (err, result) => {
             if (err) {
                 cli.error('Error updating connection string');
-                cli.error(err.message);
+                cli.error(err);
                 return;
             }
 

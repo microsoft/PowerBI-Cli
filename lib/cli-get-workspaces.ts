@@ -18,7 +18,7 @@ export module CliGetWorkspaces {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi list-workspaces -c MyWorkspace -k ABC123');
+        console.log('    $ powerbi get-workspaces -c <collection> -k <accessKey>');
     });
 
     program.parse(process.argv);
@@ -34,22 +34,22 @@ export module CliGetWorkspaces {
 
             client.workspaces.getWorkspacesByCollectionName(settings.collection, (err, result) => {
                 if (err) {
-                    cli.error(err.message);
-                } else {
-                    let workspaces = result.value;
-
-                    if (workspaces.length == 0) {
-                        return cli.warn('No workspaces found within collection: %s', settings.collection);
-                    }
-                    
-                    cli.print("================================================");
-                    cli.print('Gettings workspaces for Collection: %s', settings.collection);
-                    cli.print("================================================");
-
-                    result.value.forEach(workspace => {
-                        cli.print(workspace.workspaceId);
-                    });
+                    return cli.error(err);
                 }
+                
+                let workspaces = result.value;
+
+                if (workspaces.length == 0) {
+                    return cli.warn('No workspaces found within collection: %s', settings.collection);
+                }
+
+                cli.print("================================================");
+                cli.print('Gettings workspaces for Collection: %s', settings.collection);
+                cli.print("================================================");
+
+                result.value.forEach(workspace => {
+                    cli.print(workspace.workspaceId);
+                });
             });
         } catch (_error) {
             err = _error;

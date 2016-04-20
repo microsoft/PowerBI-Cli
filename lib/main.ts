@@ -6,7 +6,9 @@ import {CliCreateWorkspace} from './cli-create-workspace';
 import {CliGetWorkspaces} from './cli-Get-workspaces';
 import {CliImport} from './cli-import';
 import {CliGetDatasets} from './cli-get-datasets';
+import {CliGetReports} from './cli-get-reports';
 import {CliUpdateConnection} from './cli-update-connection';
+import {CliDeleteDataset} from './cli-delete-dataset';
 
 export module Main {
     let program = require('commander');
@@ -20,12 +22,14 @@ export module Main {
         .command('create-workspace', 'Create a new workspace within an existing workspace collection')
         .command('import', 'Import a PBIX file to a workspace')
         .command('get-datasets', 'Gets a list of datasets within a workspace')
-        .command('update-connection', 'Update the connection string for a datasource');        
+        .command('get-reports', 'Gets a list of reports within a workspace')
+        .command('update-connection', 'Update the connection string for a datasource')
+        .command('delete-dataset', 'Deletes a dataset from a workspace');        
 
     program.on('--help', function () {
-        console.log('  Examples:');
+        console.log('See help on sub commands');
         console.log('');
-        console.log('    $ powerbi --message hello');
+        console.log('    $ powerbi <command> --help');
     });
 
     program.parse(process.argv);

@@ -21,14 +21,13 @@ export module CliConfig {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi config -c MyWorkspace -k ABC123 -w ABC123');
+        console.log('    $ powerbi config -c <collection> -k <accessKey> -w <workspace>');
     });
 
     program.parse(process.argv);
 
     try {
         let properties = ['collection', 'workspace', 'accessKey', 'baseUri'];
-
         let currentConfig = config.get();
         
         properties.forEach(key => {

@@ -1,14 +1,14 @@
 /// <reference path="../typings/main.d.ts" />
 
 import {Cli} from './cli';
-import {CliConfig} from './cli-config';
-import {CliCreateWorkspace} from './cli-create-workspace';
+import CliConfig from './cli-config';
+import CliCreateWorkspace from './cli-create-workspace';
 import CliGetWorkspaces from './cli-Get-workspaces';
-import {CliImport} from './cli-import';
-import {CliGetDatasets} from './cli-get-datasets';
-import {CliGetReports} from './cli-get-reports';
-import {CliUpdateConnection} from './cli-update-connection';
-import {CliDeleteDataset} from './cli-delete-dataset';
+import CliImport from './cli-import';
+import CliGetDatasets from './cli-get-datasets';
+import CliGetReports from './cli-get-reports';
+import CliUpdateConnection from './cli-update-connection';
+import CliDeleteDataset from './cli-delete-dataset';
 
 export module Main {
     let program = require('commander');

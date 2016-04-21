@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../lib/cli-get-reports.js');
+require('../lib/cli-get-reports.js').default();

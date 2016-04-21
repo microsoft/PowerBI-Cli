@@ -5,7 +5,7 @@ import {Config as config} from './config';
 import * as fs from 'fs';
 import * as _ from 'lodash';
 
-export module CliImport {
+export default function CliImport() {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -16,9 +16,9 @@ export module CliImport {
         .option('-c, --collection <collection>', 'The Power BI workspace collection')
         .option('-w, --workspace <workspaceId>', 'The Power BI workspace')
         .option('-k, --accessKey <accessKey>', 'The Power BI workspace collection access key')
+        .option('-n, --displayName <displayName>', 'The dataset display name')
         .option('-f, --file <file>', 'The PBIX file to upload')
         .option('-o, --overwrite [overwrite]', 'Whether to overwrite a dataset with the same name.  Default is false')
-        .option('-n, --name [name]', 'The dataset display name')
         .option('-b --baseUri [baseUri]', 'The base uri to connect to');
 
     program.on('--help', function () {
@@ -39,13 +39,11 @@ export module CliImport {
             let credentials = new msrest.TokenCredentials(token.generate(settings.accessKey), 'AppToken');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
-            if (!_.isUndefined(settings.overwrite)) {
+            if (!_.isUndefined(settings.overwrite) && settings.overwrite) {
                 options.nameConflict = 'Overwrite';
             }
 
-            if (settings.name) {
-                options.datasetDisplayName = settings.name;
-            }
+            options.datasetDisplayName = settings.displayName;
 
             if (!fs.existsSync(settings.file)) {
                 throw new Error(util.format('File "%s" not found', settings.file));

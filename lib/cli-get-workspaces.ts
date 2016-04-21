@@ -3,7 +3,7 @@ import * as msrest from 'ms-rest';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module CliGetWorkspaces {
+export default function CliGetWorkspaces() {
     let err;
     let program = require('commander');
     let colors = require('colors');

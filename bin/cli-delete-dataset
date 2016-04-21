@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../lib/cli-delete-dataset.js');
+require('../lib/cli-delete-dataset.js').default();

@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../lib/cli-update-connection.js');
+require('../lib/cli-update-connection.js').default();

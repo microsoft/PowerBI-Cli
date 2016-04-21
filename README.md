@@ -71,4 +71,4 @@ Imports a PBIX file into a
 #### update-connection
 Updates connection strings and/or credentials for an existing dataset
 
-`powerbi update-connection -c <collection> -w <workspaceId> -k <accessKey> -d <datasetId> -cs [connectionString] -u [username] -p [password]`
+`powerbi update-connection -c <collection> -w <workspaceId> -k <accessKey> -d <datasetId> -s [connectionString] -u [username] -p [password]`

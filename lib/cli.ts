@@ -39,7 +39,7 @@ export class Cli {
             if (serviceError.statusCode) {
                 Cli.error('Status Code: ', serviceError.statusCode)
             }
-            if (serviceError.response.headers) {
+            if (serviceError.response && serviceError.response.headers) {
                 for (var key in serviceError.response.headers) {
                     Cli.error(key, ': ', serviceError.response.headers[key]);
                 }

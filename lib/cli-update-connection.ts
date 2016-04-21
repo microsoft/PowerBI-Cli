@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module CliUpdateConnection {
+export default function CliUpdateConnection() {
     let err;
     let program = require('commander');
     let colors = require('colors');
@@ -16,7 +16,7 @@ export module CliUpdateConnection {
         .option('-w, --workspace <workspaceId>', 'The Power BI workspace')
         .option('-k, --accessKey <accessKey>', 'The Power BI workspace collection access key')
         .option('-d, --dataset <datasetId>', 'The dataset to update')
-        .option('-cs, --connectionString [connectionString]', 'The connection string to access the datasource')
+        .option('-s, --connectionString [connectionString]', 'The connection string to access the datasource')
         .option('-u, --username [username]', 'The username to access the datasource')
         .option('-p, --password [password]', 'The password to access the datasource')
         .option('-b --baseUri [baseUri]', 'The base uri to connect to');
@@ -24,7 +24,7 @@ export module CliUpdateConnection {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi update-connection -c <collection> -k <accessKey> -w <workspace> -u [username] -p [password] -cs [connectionString]');
+        console.log('    $ powerbi update-connection -c <collection> -k <accessKey> -w <workspace> -u [username] -p [password] -s [connectionString]');
     });
 
     program.parse(process.argv);

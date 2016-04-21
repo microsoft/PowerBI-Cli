@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
 
-export module CliConfig {
+export default function CliConfig() {
     let err;
     let program = require('commander');
     let colors = require('colors');

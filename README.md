@@ -35,7 +35,7 @@ The following global flags are available to all commands.  These can be stored w
 ## Commands
 
 ### config
-Gets and sets configuration values that are reused in commands
+Gets and sets configuration values that are reused in commands. Config values are stored within a `.powerbirc` file.  If you store access keys please ensure that you **do not** commit these values to any public source control.  If your access keys are compromised a user can take full control over your Power BI workspace collection.  If you feel your account was compromised you can regenerate your access keys in the azure portal.
 
 **Setting new configuration values**
 

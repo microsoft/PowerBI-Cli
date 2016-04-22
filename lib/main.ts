@@ -9,6 +9,7 @@ import CliGetDatasets from './cli-get-datasets';
 import CliGetReports from './cli-get-reports';
 import CliUpdateConnection from './cli-update-connection';
 import CliDeleteDataset from './cli-delete-dataset';
+import CliCreateToken from './cli-create-token';
 
 export module Main {
     let program = require('commander');
@@ -24,7 +25,8 @@ export module Main {
         .command('get-datasets', 'Gets a list of datasets within a workspace')
         .command('get-reports', 'Gets a list of reports within a workspace')
         .command('update-connection', 'Update the connection string for a datasource')
-        .command('delete-dataset', 'Deletes a dataset from a workspace');        
+        .command('delete-dataset', 'Deletes a dataset from a workspace')        
+        .command('create-token', 'Creates a Power BI app token');   
 
     program.on('--help', function () {
         console.log('See help on sub commands');

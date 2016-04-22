@@ -72,3 +72,7 @@ Imports a PBIX file into a
 Updates connection strings and/or credentials for an existing dataset
 
 `powerbi update-connection -c <collection> -w <workspaceId> -k <accessKey> -d <datasetId> -s [connectionString] -u [username] -p [password]`
+#### create-token
+Creates a Power BI app token
+
+`powerbi create-token -t <tokenType> -c <collection> -k <accessKey> -w [workspaceId] -r [reportId]`

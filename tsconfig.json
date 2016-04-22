@@ -1,9 +1,14 @@
 {
     "compilerOptions": {
-        "emitDecoratorMetadata": true,
-        "target": "es5",
         "module": "commonjs",
+        "target": "es5",
         "declaration": true,
+        "moduleResolution": "node",
         "sourceMap": true
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "typings/browser.d.ts",
+        "typings/browser"
+    ]
 }

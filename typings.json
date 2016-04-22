@@ -1,8 +1,7 @@
 {
   "ambientDependencies": {
+    "jwt-simple": "registry:dt/jwt-simple#0.2.0+20160316155526",
+    "lodash": "registry:dt/lodash#3.10.0+20160330154726",
     "node": "registry:dt/node#4.0.0+20160330064709"
-  },
-  "dependencies": {
-    "lodash": "registry:npm/lodash#4.0.0+20160416211519"
   }
 }

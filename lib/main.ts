@@ -1,5 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
-
 import {Cli} from './cli';
 import CliConfig from './cli-config';
 import CliCreateWorkspace from './cli-create-workspace';

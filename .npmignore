@@ -1,0 +1,9 @@
+**/*.ts
+!**/*.d.ts
+/.vscode/
+typings/
+test/
+**/*.js.map
+jsconfig.json
+tsconfig.json
+typings.json

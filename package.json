@@ -4,7 +4,8 @@
   "main": "./index.js",
   "typings": "./lib/index.d.ts",
   "scripts": {
-    "postinstall": "typings install && tsc"
+    "preinit": "npm install -g typings typescript && npm install",
+    "init": "typings install && tsc"
   },
   "author": "PowerBI <nugetpowerbi@microsoft.com> (https://dev.powerbi.com)",
   "license": "MIT",
@@ -17,11 +18,9 @@
     "commander": "^2.9.0",
     "lodash": "^4.11.1",
     "ms-rest": "^1.12.0",
-    "powerbi-api": "^0.1.1",
-    "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "powerbi-api": "^0.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": { },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/PowerBI-Cli.git"

@@ -5,7 +5,9 @@
   "typings": "./lib/index.d.ts",
   "scripts": {
     "preinit": "npm install -g typings typescript && npm install",
-    "init": "typings install && tsc"
+    "init": "typings install && tsc",
+    "prepublish": "dos2unix bin/**",
+    "postpublish": "unix2dos bin/**"
   },
   "author": "PowerBI <nugetpowerbi@microsoft.com> (https://dev.powerbi.com)",
   "license": "MIT",

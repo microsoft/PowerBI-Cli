@@ -56,7 +56,7 @@ export default function CliCreateToken() {
                     token = powerbi.PowerBIToken.createDevToken(settings.collection, settings.workspace);
                     break;
                 case 'provision':
-                    if (!(settings.collection && settings.workspace)) {
+                    if (!(settings.collection)) {
                         return cli.error('collection param is required');
                     }
                     token = powerbi.PowerBIToken.createProvisionToken(settings.collection);

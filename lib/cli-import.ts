@@ -24,7 +24,7 @@ export default function CliImport() {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi import -c <collection> -k <accessKey> -w <workspace> -f <file>');
+        console.log('    $ powerbi import -c <collection> -k <accessKey> -w <workspace> -f <file> -n <displayName>');
     });
 
     program.parse(process.argv);

@@ -18,7 +18,7 @@
 	// Show the output window only if unrecognized errors occur.
 	"showOutput": "silent",
 
-	// args is the HelloWorld program to compile.
+	// Any additional args to pass to the typescript compiler.
 	"args": [],
 
 	// use the standard tsc problem matcher to find compile problems

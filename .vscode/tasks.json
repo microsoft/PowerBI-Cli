@@ -6,7 +6,6 @@
 // ${fileExtname}: the current opened file's extension
 // ${cwd}: the current working directory of the spawned process
 
-// A task runner that calls the Typescript compiler (tsc) and
 {
 	"version": "0.1.0",
 

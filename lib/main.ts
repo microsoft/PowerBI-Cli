@@ -1,17 +1,16 @@
 import {Cli} from './cli';
 import CliConfig from './cli-config';
 import CliCreateWorkspace from './cli-create-workspace';
-import CliGetWorkspaces from './cli-Get-workspaces';
+import CliGetWorkspaces from './cli-get-workspaces';
 import CliImport from './cli-import';
 import CliGetDatasets from './cli-get-datasets';
 import CliGetReports from './cli-get-reports';
 import CliUpdateConnection from './cli-update-connection';
 import CliDeleteDataset from './cli-delete-dataset';
 import CliCreateToken from './cli-create-token';
+import * as program from 'commander';
 
 export module Main {
-    let program = require('commander');
-    let colors = require('colors');
     let err;
     let pkg = require('../package.json');
 

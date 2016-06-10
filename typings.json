@@ -1,7 +1,9 @@
 {
-  "ambientDependencies": {
+  "globalDependencies": {
+    "colors": "registry:dt/colors#0.6.0-1+20160501135139",
+    "commander": "registry:dt/commander#2.3.0+20160317120654",
     "jwt-simple": "registry:dt/jwt-simple#0.2.0+20160316155526",
     "lodash": "registry:dt/lodash#3.10.0+20160330154726",
-    "node": "registry:dt/node#4.0.0+20160330064709"
+    "node": "registry:dt/node#6.0.0+20160608110640"
   }
 }

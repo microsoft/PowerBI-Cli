@@ -3,13 +3,10 @@ import * as msrest from 'ms-rest';
 import * as fs from 'fs';
 import {Cli as cli} from './cli';
 import {Config as config} from './config';
+import * as program from 'commander';
 
 export default function CliUpdateConnection() {
-    let err;
-    let program = require('commander');
-    let colors = require('colors');
     let pkg = require('../package.json');
-    let util = require('util');
 
     program.version(pkg.version)
         .option('-c, --collection <collection>', 'The Power BI workspace collection')

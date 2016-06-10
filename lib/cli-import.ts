@@ -4,11 +4,9 @@ import {Cli as cli} from './cli';
 import {Config as config} from './config';
 import * as fs from 'fs';
 import * as _ from 'lodash';
+import * as program from 'commander';
 
 export default function CliImport() {
-    let err;
-    let program = require('commander');
-    let colors = require('colors');
     let pkg = require('../package.json');
     let util = require('util');
 

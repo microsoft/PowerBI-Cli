@@ -2,13 +2,14 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
+        "allowJs": false,
         "declaration": true,
         "moduleResolution": "node",
         "sourceMap": true
     },
     "exclude": [
         "node_modules",
-        "typings/browser.d.ts",
-        "typings/browser"
+        "typings/index.d.ts",
+        "typings/global"
     ]
 }

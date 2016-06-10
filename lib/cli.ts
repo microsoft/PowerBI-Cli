@@ -1,8 +1,8 @@
-let colors = require('colors');
 let pkg = require("../package.json");
 let _ = require('lodash');
 let util = require('util');
 import * as msrest from 'ms-rest';
+import * as colors from 'colors';
 
 const defaults: any = { color: 'white' };
 

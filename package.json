@@ -2,7 +2,7 @@
   "name": "powerbi-cli",
   "version": "0.1.5",
   "main": "./index.js",
-  "typings": "./lib/index.d.ts",
+  "typings": "./index.d.ts",
   "scripts": {
     "preinit": "npm install -g typings typescript && npm install",
     "init": "typings install && tsc",

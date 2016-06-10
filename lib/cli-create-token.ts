@@ -17,7 +17,7 @@ export default function CliCreateToken() {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi create-token -c <collection>, -w <workspace> -r <report> -k <accessKey>');
+        console.log('    $ powerbi create-token -c <collection>, -w <workspace> -r <reportId> -k <accessKey>');
     });
 
     program.parse(process.argv);

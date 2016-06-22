@@ -20,6 +20,9 @@ The following global flags are available to all commands.  These can be stored w
 -b --baseUri
 > The base URI that will be used to call the Power BI REST apis.  The default value is https://api.powerbi.com.
 
+-r --reportId
+> The Power BI report id
+
 -h --help
 > Displays command line help
 

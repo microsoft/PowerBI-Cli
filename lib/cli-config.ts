@@ -13,18 +13,19 @@ export default function CliConfig() {
         .option('-w, --workspace [workspaceId]', 'The Power BI workspace')
         .option('-k, --accessKey [accessKey]', 'The Power BI workspace collection access key')
         .option('-b, --baseUri [baseUri]', 'The base uri to connect to')
+        .option('-r, --report [reportId]', 'The Power BI report id')
         .option('-clear, --clear [clear]', 'Clears the settings');
 
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi config -c <collection> -k <accessKey> -w <workspace>');
+        console.log('    $ powerbi config -c <collection> -k <accessKey> -w <workspace> -b <baseUri> -r <reportId>');
     });
 
     program.parse(process.argv);
 
     try {
-        let properties = ['collection', 'workspace', 'accessKey', 'baseUri'];
+        let properties = ['collection', 'workspace', 'accessKey', 'baseUri', 'reportId'];
         let currentConfig = config.get();
         
         properties.forEach(key => {

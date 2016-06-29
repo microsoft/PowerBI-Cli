@@ -33,8 +33,7 @@ export default function CliImport() {
     } else {
         try {
             let options: powerbi.ImportFileOptions = {};
-            let token = powerbi.PowerBIToken.createDevToken(settings.collection, settings.workspace);
-            let credentials = new msrest.TokenCredentials(token.generate(settings.accessKey), 'AppToken');
+            let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
             if (!_.isUndefined(settings.overwrite) && settings.overwrite) {

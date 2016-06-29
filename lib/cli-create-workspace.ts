@@ -26,8 +26,7 @@ export default function CliCreateWorkspace() {
         program.help();
     } else {
         try {
-            let token = powerbi.PowerBIToken.createProvisionToken(settings.collection);
-            let credentials = new msrest.TokenCredentials(token.generate(settings.accessKey), 'AppToken');
+            let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
             client.workspaces.postWorkspace(settings.collection, (err, result) => {

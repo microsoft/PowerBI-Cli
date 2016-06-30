@@ -1,6 +1,6 @@
 {
   "name": "powerbi-cli",
-  "version": "0.1.5",
+  "version": "2.0.0",
   "main": "./index.js",
   "typings": "./index.d.ts",
   "scripts": {
@@ -20,7 +20,7 @@
     "commander": "^2.9.0",
     "lodash": "^4.11.1",
     "ms-rest": "^1.12.0",
-    "powerbi-api": "^0.1.3"
+    "powerbi-api": "^2.0.0"
   },
   "devDependencies": {},
   "repository": {

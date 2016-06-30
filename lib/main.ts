@@ -7,7 +7,7 @@ import CliGetDatasets from './cli-get-datasets';
 import CliGetReports from './cli-get-reports';
 import CliUpdateConnection from './cli-update-connection';
 import CliDeleteDataset from './cli-delete-dataset';
-import CliCreateToken from './cli-create-token';
+import CliCreateEmbedToken from './cli-create-embed-token';
 import * as program from 'commander';
 
 export module Main {
@@ -22,8 +22,8 @@ export module Main {
         .command('get-datasets', 'Gets a list of datasets within a workspace')
         .command('get-reports', 'Gets a list of reports within a workspace')
         .command('update-connection', 'Update the connection string for a datasource')
-        .command('delete-dataset', 'Deletes a dataset from a workspace')        
-        .command('create-token', 'Creates a Power BI app token');   
+        .command('delete-dataset', 'Deletes a dataset from a workspace')
+        .command('create-embed-token', 'Creates a Power BI embed token');
 
     program.on('--help', function () {
         console.log('See help on sub commands');

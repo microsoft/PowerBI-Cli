@@ -31,8 +31,7 @@ export default function CliUpdateConnection() {
         program.help();
     } else {
         try {
-            let token = powerbi.PowerBIToken.createDevToken(settings.collection, settings.workspace);
-            let credentials = new msrest.TokenCredentials(token.generate(settings.accessKey), 'AppToken');
+            let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
             client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (err, result) => {

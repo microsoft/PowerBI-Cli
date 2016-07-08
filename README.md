@@ -78,4 +78,4 @@ Updates connection strings and/or credentials for an existing dataset
 #### create-token
 Creates a Power BI app token
 
-`powerbi create-token -t <tokenType> -c <collection> -k <accessKey> -w [workspaceId] -r [reportId]`
+`powerbi create-token -t <tokenType> -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...]`

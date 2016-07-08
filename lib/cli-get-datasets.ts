@@ -27,8 +27,7 @@ export default function CliGetDatasets() {
         program.help();
     } else {
         try {
-            let token = powerbi.PowerBIToken.createDevToken(settings.collection, settings.workspace);
-            let credentials = new msrest.TokenCredentials(token.generate(settings.accessKey), 'AppToken');
+            let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
             client.datasets.getDatasets(settings.collection, settings.workspace, (err, result) => {

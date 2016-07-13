@@ -28,7 +28,7 @@ export default function CliImport() {
     program.parse(process.argv);
     let settings = config.merge(program);
 
-    if (process.argv.length === 2) {
+    if (!(settings.collection && settings.workspace && settings.accessKey && settings.displayName && settings.file)) {
         program.help();
     } else {
         try {

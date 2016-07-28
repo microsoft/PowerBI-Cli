@@ -1,6 +1,9 @@
 # powerbi-cli
 
-[![Build Status](https://travis-ci.org/Microsoft/PowerBI-Cli.svg?branch=master)](https://travis-ci.org/Microsoft/PowerBI-Cli)
+[![Build Status](https://img.shields.io/travis/Microsoft/PowerBI-Cli/master.svg)](https://travis-ci.org/Microsoft/PowerBI-Cli)
+![NPM Version](https://img.shields.io/npm/v/powerbi-cli.svg)
+![NPM Total Downloads](https://img.shields.io/npm/dt/powerbi-cli.svg)
+![NPM Monthly Downloads](https://img.shields.io/npm/dm/powerbi-cli.svg)
 
 Power BI command line interface for managing Power BI Embedded workspace collections
 ## Installation

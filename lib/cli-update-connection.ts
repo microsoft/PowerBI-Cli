@@ -34,9 +34,9 @@ export default function CliUpdateConnection() {
             let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
-            client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (gdetDatasetErr, result) => {
-                if (gdetDatasetErr) {
-                    return cli.error(gdetDatasetErr);
+            client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (getDatasetErr, result) => {
+                if (getDatasetErr) {
+                    return cli.error(getDatasetErr);
                 }
 
                 cli.success('Found dataset!');

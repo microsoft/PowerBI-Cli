@@ -71,7 +71,7 @@ export default function CliUpdateConnection() {
 
         cli.print('Updating connection string...');
         client.datasets.setAllConnections(settings.collection, settings.workspace, settings.dataset, params, (err, result) => {
-            if (err && typeof (callback) === 'function') {
+            if (err && typeof callback === 'function') {
                 callback(err);
             }
 
@@ -79,7 +79,7 @@ export default function CliUpdateConnection() {
             cli.print('Dataset: ', settings.dataset);
             cli.print('ConnectionString: ', settings.connectionString);
 
-            if (result && typeof (callback) === 'function') {
+            if (result && typeof callback === 'function') {
                 callback(null, result);
             }
         });
@@ -88,7 +88,7 @@ export default function CliUpdateConnection() {
     function updateCredentials(client: powerbi.PowerBIClient, settings: any, callback?): void {
         cli.print('Getting gateway datasources...');
         client.datasets.getGatewayDatasources(settings.collection, settings.workspace, settings.dataset, (err, result) => {
-            if (err && typeof (callback) === 'function') {
+            if (err && typeof callback === 'function') {
                 return callback(err);
             }
 
@@ -128,7 +128,7 @@ export default function CliUpdateConnection() {
 
             cli.print('Updating datasource credentials...');
             client.gateways.patchDatasource(settings.collection, settings.workspace, datasource.gatewayId, datasource.id, delta, (err, patchResult) => {
-                if (err && typeof (callback) === 'function') {
+                if (err && typeof callback === 'function') {
                     return callback(err);
                 }
 
@@ -136,7 +136,7 @@ export default function CliUpdateConnection() {
                 cli.print('Datasource ID: ', datasource.id);
                 cli.print('Gateway ID: ', datasource.gatewayId);
 
-                if (typeof (callback) === 'function') {
+                if (typeof callback === 'function') {
                     callback(null, datasource);
                 }
             })

@@ -27,16 +27,16 @@ export default function CliUpdateConnection() {
     program.parse(process.argv);
     let settings = config.merge(program);
 
-    if (process.argv.length === 2) {
+    if (process.argv.length === 2 || !settings.dataset) {
         program.help();
     } else {
         try {
             let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
-            client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (err, result) => {
-                if (err) {
-                    return cli.error(err);
+            client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (gdetDatasetErr, result) => {
+                if (gdetDatasetErr) {
+                    return cli.error(gdetDatasetErr);
                 }
 
                 cli.success('Found dataset!');
@@ -44,11 +44,19 @@ export default function CliUpdateConnection() {
                 cli.print('Name: %s', result.name);
 
                 if (settings.connectionString) {
-                    updateConnectionString(client, settings);
+                    updateConnectionString(client, settings, function (updateConnectionStringErr) {
+                        if (updateConnectionStringErr) {
+                            return cli.error(updateConnectionStringErr);
+                        }
+                    });
                 }
 
                 if (settings.username && settings.password) {
-                    updateCredentials(client, settings)
+                    updateCredentials(client, settings, function (updateCredentialsErr) {
+                        if (updateCredentialsErr) {
+                            return cli.error(updateCredentialsErr);
+                        }
+                    });
                 }
             });
         } catch (err) {
@@ -61,26 +69,26 @@ export default function CliUpdateConnection() {
             connectionString: settings.connectionString
         };
 
+        cli.print('Updating connection string...');
         client.datasets.setAllConnections(settings.collection, settings.workspace, settings.dataset, params, (err, result) => {
-            if (err) {
-                cli.error('Error updating connection string');
-                cli.error(err);
-                return;
+            if (err && typeof (callback) === 'function') {
+                callback(err);
             }
 
             cli.success('Connection string successfully updated');
             cli.print('Dataset: ', settings.dataset);
             cli.print('ConnectionString: ', settings.connectionString);
 
-            if (callback) {
+            if (result && typeof (callback) === 'function') {
                 callback(null, result);
             }
         });
     }
 
     function updateCredentials(client: powerbi.PowerBIClient, settings: any, callback?): void {
+        cli.print('Getting gateway datasources...');
         client.datasets.getGatewayDatasources(settings.collection, settings.workspace, settings.dataset, (err, result) => {
-            if (err) {
+            if (err && typeof (callback) === 'function') {
                 return callback(err);
             }
 
@@ -118,8 +126,9 @@ export default function CliUpdateConnection() {
                 basicCredentials: credentials
             };
 
+            cli.print('Updating datasource credentials...');
             client.gateways.patchDatasource(settings.collection, settings.workspace, datasource.gatewayId, datasource.id, delta, (err, patchResult) => {
-                if (callback && err) {
+                if (err && typeof (callback) === 'function') {
                     return callback(err);
                 }
 
@@ -127,7 +136,7 @@ export default function CliUpdateConnection() {
                 cli.print('Datasource ID: ', datasource.id);
                 cli.print('Gateway ID: ', datasource.gatewayId);
 
-                if (callback) {
+                if (typeof (callback) === 'function') {
                     callback(null, datasource);
                 }
             })

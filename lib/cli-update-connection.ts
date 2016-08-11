@@ -64,14 +64,14 @@ export default function CliUpdateConnection() {
         }
     }
 
-    function updateConnectionString(client: powerbi.PowerBIClient, settings: any, callback?): void {
+    function updateConnectionString(client: powerbi.PowerBIClient, settings: any, callback: (err: Error, result?: any) => void): void {
         let params: { [propertyName: string]: any } = {
             connectionString: settings.connectionString
         };
 
         cli.print('Updating connection string...');
         client.datasets.setAllConnections(settings.collection, settings.workspace, settings.dataset, params, (err, result) => {
-            if (err && typeof callback === 'function') {
+            if (err) {
                 callback(err);
             }
 
@@ -79,16 +79,16 @@ export default function CliUpdateConnection() {
             cli.print('Dataset: ', settings.dataset);
             cli.print('ConnectionString: ', settings.connectionString);
 
-            if (result && typeof callback === 'function') {
+            if (result) {
                 callback(null, result);
             }
         });
     }
 
-    function updateCredentials(client: powerbi.PowerBIClient, settings: any, callback?): void {
+    function updateCredentials(client: powerbi.PowerBIClient, settings: any, callback: (err: Error, result?: any) => void): void {
         cli.print('Getting gateway datasources...');
         client.datasets.getGatewayDatasources(settings.collection, settings.workspace, settings.dataset, (err, result) => {
-            if (err && typeof callback === 'function') {
+            if (err) {
                 return callback(err);
             }
 
@@ -128,7 +128,7 @@ export default function CliUpdateConnection() {
 
             cli.print('Updating datasource credentials...');
             client.gateways.patchDatasource(settings.collection, settings.workspace, datasource.gatewayId, datasource.id, delta, (err, patchResult) => {
-                if (err && typeof callback === 'function') {
+                if (err) {
                     return callback(err);
                 }
 
@@ -136,9 +136,7 @@ export default function CliUpdateConnection() {
                 cli.print('Datasource ID: ', datasource.id);
                 cli.print('Gateway ID: ', datasource.gatewayId);
 
-                if (typeof callback === 'function') {
-                    callback(null, datasource);
-                }
+                callback(null, datasource);
             })
         });
     }

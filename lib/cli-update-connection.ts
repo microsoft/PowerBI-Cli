@@ -119,7 +119,7 @@ export default function CliUpdateConnection() {
             };
 
             client.gateways.patchDatasource(settings.collection, settings.workspace, datasource.gatewayId, datasource.id, delta, (err, patchResult) => {
-                if (err) {
+                if (callback && err) {
                     return callback(err);
                 }
 

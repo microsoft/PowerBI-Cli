@@ -79,9 +79,7 @@ export default function CliUpdateConnection() {
             cli.print('Dataset: ', settings.dataset);
             cli.print('ConnectionString: ', settings.connectionString);
 
-            if (result) {
-                callback(null, result);
-            }
+            callback(null, result);
         });
     }
 

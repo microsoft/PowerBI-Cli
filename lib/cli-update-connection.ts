@@ -34,9 +34,9 @@ export default function CliUpdateConnection() {
             let credentials = new msrest.TokenCredentials(settings.accessKey, 'AppKey');
             let client = new powerbi.PowerBIClient(credentials, settings.baseUri, null);
 
-            client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (getDatasetErr, result) => {
-                if (getDatasetErr) {
-                    return cli.error(getDatasetErr);
+            client.datasets.getDatasetById(settings.collection, settings.workspace, settings.dataset, (getDatasetError, result) => {
+                if (getDatasetError) {
+                    return cli.error(getDatasetError);
                 }
 
                 cli.success('Found dataset!');
@@ -44,17 +44,17 @@ export default function CliUpdateConnection() {
                 cli.print('Name: %s', result.name);
 
                 if (settings.connectionString) {
-                    updateConnectionString(client, settings, function (updateConnectionStringErr) {
-                        if (updateConnectionStringErr) {
-                            return cli.error(updateConnectionStringErr);
+                    updateConnectionString(client, settings, function (updateConnectionStringError) {
+                        if (updateConnectionStringError) {
+                            return cli.error(updateConnectionStringError);
                         }
                     });
                 }
 
                 if (settings.username && settings.password) {
-                    updateCredentials(client, settings, function (updateCredentialsErr) {
-                        if (updateCredentialsErr) {
-                            return cli.error(updateCredentialsErr);
+                    updateCredentials(client, settings, function (updateCredentialsError) {
+                        if (updateCredentialsError) {
+                            return cli.error(updateCredentialsError);
                         }
                     });
                 }

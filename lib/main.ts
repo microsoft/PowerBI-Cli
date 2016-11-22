@@ -24,9 +24,9 @@ export module Main {
         .command('update-connection', 'Update the connection string for a datasource')
         .command('delete-dataset', 'Deletes a dataset from a workspace')
         .command('create-embed-token', 'Creates a Power BI embed token')
-		.command('get-gateways', 'Gets a list of gateways within an existing workspace collection')
-		.command('get-gateway-by-id', 'Gets a gateway within an existing workspace collection by gateway id')
-		.command('create-gateway', 'Create a gateway within an existing workspace collection')
+        .command('get-gateways', 'Gets a list of gateways within an existing workspace collection')
+        .command('get-gateway-by-id', 'Gets a gateway within an existing workspace collection by gateway id')
+        .command('create-gateway', 'Create a gateway within an existing workspace collection')
         .command('delete-gateway', 'Delete a gateway within an existing workspace collection');
 
     program.on('--help', function () {

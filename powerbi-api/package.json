@@ -1,0 +1,72 @@
+{
+  "name": "powerbi-api",
+  "version": "1.0.1",
+  "description": "Node client library for Power BI API",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "precontrib": "npm install -g typings typescript && npm install",
+    "contrib": "typings install && tsc",
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/PowerBI-Node.git"
+  },
+  "keywords": [
+    "powerbi",
+    "node",
+    "javascript",
+    "rest",
+    "api"
+  ],
+  "author": {
+    "name": "PowerBI",
+    "email": "nugetpowerbi@microsoft.com",
+    "url": "https://dev.powerbi.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/PowerBI-Node/issues"
+  },
+  "homepage": "https://github.com/Microsoft/PowerBI-Node#readme",
+  "dependencies": {
+    "jwt-simple": "^0.5.0",
+    "ms-rest": "^1.12.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "gitHead": "57b9ebb6102bef73a64e49b3ef2557ff1d24a186",
+  "_id": "powerbi-api@1.0.1",
+  "_shasum": "dac1a119aeeaa68a8183c94b2a34c1db8a0549c5",
+  "_from": "powerbi-api@>=1.0.1 <2.0.0",
+  "_npmVersion": "2.15.8",
+  "_nodeVersion": "4.4.7",
+  "_npmUser": {
+    "name": "powerbi",
+    "email": "nugetpowerbi@microsoft.com"
+  },
+  "dist": {
+    "shasum": "dac1a119aeeaa68a8183c94b2a34c1db8a0549c5",
+    "tarball": "https://registry.npmjs.org/powerbi-api/-/powerbi-api-1.0.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "powerbi",
+      "email": "nugetpowerbi@microsoft.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/powerbi-api-1.0.1.tgz_1469213988882_0.5843266071751714"
+  },
+  "_resolved": "https://registry.npmjs.org/powerbi-api/-/powerbi-api-1.0.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

@@ -1,0 +1,10 @@
+**/*.ts
+!**/*.d.ts
+/.vscode/
+typings/
+test/
+**/*.js.map
+generate.bat
+swagger.json
+tsconfig.json
+typings.json

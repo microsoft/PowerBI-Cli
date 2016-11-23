@@ -19,11 +19,11 @@ var models = require('./index');
  * 
  * @member {string} [type] The gateway type
  * 
- * @member {object} [publicKey] The gateway name
+ * @member {object} [publicKey] The gateway public key
  * 
  * @member {string} [publicKey.exponent] The public key exponent
  * 
- * @member {string} [publicKey.modulud] The public key  modulus
+ * @member {string} [publicKey.modulus] The public key  modulus
  * 
  */
 function Gateway() {

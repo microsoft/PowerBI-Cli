@@ -13,7 +13,7 @@
  * A Power BI Gateway Public Key
  * @member {string} [exponent] The public key exponent
  * 
- * @member {string} [modulud] The public key  modulus
+ * @member {string} [modulus] The public key  modulus
  * 
  */
 function GatewayPublicKey() {
@@ -40,9 +40,9 @@ GatewayPublicKey.prototype.mapper = function () {
             name: 'String'
           }
         },
-        modulud: {
+        modulus: {
           required: false,
-          serializedName: 'modulud',
+          serializedName: 'modulus',
           type: {
             name: 'String'
           }

@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '4.4'
+before_install:
+- npm run contrib
+script:
+- npm test
+deploy:
+  provider: npm
+  email: nugetpowerbi@microsoft.com
+  api_key:
+    secure: PzkBpLAHD4+hTdJfYHXEEYKNWvZo3JMX+OKFBJOr6YWWnZeCmo6FjJlB4EbzxYAG6SnmZ6bTtNsbR0+8xHyzLa6g0z8t+gFqGXzW1RRqpPE6tjIydfjC+0FQw/fKOqKcdVrhYouNJz2ZtZ8+8XOQNx6gMCHOjvyFx4BaVVyvpk5VkfSIP1J7UXIRcsVuQykm/LwZRoDjCn/rNbUY7gnDcVPJ99k8dZS4Ikyv9DJmNDfqSih6tsran2jrR/yK0i4kNMrgUztr5UVShDAx5QXh5Ls/113qBL6LrkVSmFVQeEoPZC85nNG2xWL6i08wKftt7LMlsD3navMkE6YpRk9epire1ne3CyavLbtMdMPQR1lZJUhOigpP6H9DIvphmM12px6+7LgrpwTLqQi6Y8okBa9JBmB/elDXS7rtLMCpm2zsMlmlUdJs+egwxOcV4RrLhMreue0Wi2k7zKUdNMa4T5G2MStCK36AmULCnf90WCpvBTgP9yLDgzi7tIo8r8jKRwI7LwhKqOZrMJtWhsdZQ1ET2GWTi10YAnJX7qybm3Hh9XZ+6pgoC+L1brVOFwdlFqcDurbUdkb9Zxk85ambpql8RIxgAJs93jHvUkbG+22DFvN4oIRANj2M9WOl8LWulMggFMW67BtS4qfwWsF6VGVxRXRfEbAwb/tcU8no5V4=
+  on:
+    tags: true
+    repo: Microsoft/PowerBI-Node
+    branch: master

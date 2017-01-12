@@ -84,4 +84,4 @@ Updates connection strings and/or credentials for an existing dataset
 #### create-embed-token
 Creates a Power BI embed app token
 
-`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...]`
+`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> (-r <reportId> | -d <datasetId>) -u [username] --roles [roles1,roles2,...] -s [scopes]`

@@ -85,3 +85,13 @@ Updates connection strings and/or credentials for an existing dataset
 Creates a Power BI embed app token
 
 `powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...]`
+
+> Examples
+
+To create a Power BI embed app token with specific user and one role:
+
+`powerbi create-embed-token -c myCollection -k appKeykeykey...key -w 06640...744d8f10  -r 07842...e30  -u "Ali Hamud" --roles "Developer"`
+
+To create a Power BI embed app token with specific user and multiple roles:
+
+`powerbi create-embed-token -c myCollection -k appKeykeykey...key -w 06640...744d8f10  -r 07842...e30  -u "Ali Hamud" --roles "Developer,Manager"`

@@ -21,7 +21,7 @@ export default function CliUpdateConnection() {
     program.on('--help', function () {
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi update-connection -c <collection> -k <accessKey> -w <workspace> -u [username] -p [password] -s [connectionString]');
+        console.log('    $ powerbi update-connection -c <collection> -k <accessKey> -w <workspace> -d <datasetId> -u [username] -p [password] -s [connectionString]');
     });
 
     program.parse(process.argv);

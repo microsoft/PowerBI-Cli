@@ -27,9 +27,9 @@ cd bin & node cli
 ```
 
 ## Running specific command:
-Navigate to `/bin` directory and run cli file using node with parameters.
+Navigate to `/bin` directory and run specific cli file using node.
 Example:
 
 ```
-cd bin & node cli get-datasets
+cd bin & node cli-get-datasets -c <collection> -w <workspace> -k <accessKey>
 ```

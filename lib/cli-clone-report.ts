@@ -13,20 +13,21 @@ export default function CliCloneReprot() {
         .option('-r, --report <reportKey>', 'The report to clone')
         .option('-k, --accessKey <accessKey>', 'The Power BI workspace collection access key')
         .option('-n, --newName <newName>', 'The new report name')
-        .option('-t, --tworkspace [targetWorkspace]', 'New target workspace to save report in. default is original report workspace')
-        .option('-d, --tdataset [targetDatasetKey]', 'New target dataset to rebind report with. default is original report dataset')
+        .option('-t, --tworkspace [targetWorkspace]', 'New target workspace to save report in. default is original report workspace.')
+        .option('-d, --tdataset [targetDatasetKey]', 'New target dataset to rebind report with. default is original report dataset.')
         .option('-b --baseUri [baseUri]', 'The base uri to connect to');
 
     program.on('--help', function () {
         console.log('  Description:');
         console.log('');
-        console.log('    Clones a report to a new report with new name.');
+        console.log('    Clones a report and gives name to new report.');
         console.log('    Assign target workspace to save the new report in a specific workspace.');
         console.log('    Assign target dataset to rebind the new report with a specific dataset.');
+        console.log('    When moving between workspaces, the dataset has to reside within the targeted workspace.');
         console.log('');
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi clone-reports -c <collection> -w <workspace> -k <accessKey> -r <report> -n <newName>');
+        console.log('    $ powerbi clone-report -c <collection> -w <workspace> -k <accessKey> -r <report> -n <newName>');
     });
 
     program.parse(process.argv);
@@ -51,6 +52,10 @@ export default function CliCloneReprot() {
             if (err) {
                 return cli.error(err);
             }
+            
+            cli.print('New report ID: %s', result.id);
+            cli.print('Name: %s', result.name);
+            cli.print('EmbedUrl: %s', result.embedUrl);
             
             cli.success('Clone report has been completed successfully');
         });

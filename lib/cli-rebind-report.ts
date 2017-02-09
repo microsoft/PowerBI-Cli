@@ -22,7 +22,7 @@ export default function CliRebindReport() {
         console.log('');
         console.log('  Examples:');
         console.log('');
-        console.log('    $ powerbi rebind-reports -c <collection> -w <workspace> -k <accessKey>');
+        console.log('    $ powerbi rebind-report -c <collection> -w <workspace> -k <accessKey>');
     });
 
     program.parse(process.argv);

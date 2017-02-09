@@ -46,7 +46,7 @@ export default function CliGetReports() {
                 cli.print('=========================================');
 
                 reports.forEach(report => {
-                    cli.print('ID: %s | Name: %s', report.id, report.name);
+                    cli.print('ID: %s | Name: %s | EmbedUrl: %s', report.id, report.name, report.embedUrl);
                 });
             });
         } catch (err) {

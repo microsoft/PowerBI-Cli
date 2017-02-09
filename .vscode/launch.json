@@ -5,9 +5,11 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}\\bin\\cli-create-embed-token",
+			"program": "${workspaceRoot}\\bin\\cli-get-workspaces",
 			"stopOnEntry": false,
 			"args": [
+				"-c","<collection>",
+				"-k","<key>"
 			],
 			"cwd": "${workspaceRoot}",
 			"preLaunchTask": null,

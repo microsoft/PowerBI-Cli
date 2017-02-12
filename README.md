@@ -82,11 +82,11 @@ Updates connection strings and/or credentials for an existing dataset
 
 `powerbi update-connection -c <collection> -w <workspaceId> -k <accessKey> -d <datasetId> -s [connectionString] -u [username] -p [password]`
 #### create-embed-token
-Creates a Power BI embed token
+Creates a Power BI embed token.
 
-`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...]`
+`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...] -s [scope1 scope2 ...]`
 
-`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -d <datasetId> -u [username] --roles [roles1,roles2,...]`
+`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -d <datasetId> -u [username] --roles [roles1,roles2,...] -s [scope1 scope2 ...]`
 
 > Examples
 
@@ -100,5 +100,5 @@ To create a Power BI embed token with specific user and multiple roles:
 
 To carete Power BI embed token to create a report using dataset
 
-`powerbi create-embed-token -c <collection> -k <key> -w 06640...744d8f10  -d 12532...b13  -u "Ali Hamud" --roles "Developer,Manager"`
+`powerbi create-embed-token -c <collection> -k <key> -w 06640...744d8f10  -d 12532...b13  -u "Ali Hamud" --roles "Developer,Manager" -s "Dataset.Read Report.Read"`
 

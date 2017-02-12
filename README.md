@@ -100,5 +100,5 @@ To create a Power BI embed token with specific user and multiple roles:
 
 To carete Power BI embed token to create a report using dataset
 
-`powerbi create-embed-token -c <collection> -k <key> -w 06640...744d8f10  -d 12532...b13  -u "Ali Hamud" --roles "Developer,Manager" -s "Dataset.Read Report.Read"`
+`powerbi create-embed-token -c <collection> -k <key> -w 06640...744d8f10  -d 12532...b13  -u "Ali Hamud" --roles "Developer,Manager" -s "Dataset.Read Workspace.Report.Create"`
 

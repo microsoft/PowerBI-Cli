@@ -25,8 +25,9 @@ export default function CliCreateEmbedToken() {
         console.log('  Examples:');
         console.log('');
         console.log('    $ powerbi create-embed-token -c <collection>, -w <workspace> -r <reportId> -k <accessKey> -u [username] --roles [roles1,roles2,...]');
-        console.log('    $ powerbi create-embed-token -c <collection>, -w <workspace> -d <datasetId> -k <accessKey>');
         console.log('    $ powerbi create-embed-token -c <collection>, -w <workspace> -r <reportId> -k <accessKey> -s [scopes]');
+        console.log('    $ powerbi create-embed-token -c <collection>, -w <workspace> -d <datasetId> -k <accessKey> -s [scopes]');
+        console.log('    Create report in embedded view needs the following scopes: "Dataset.Read Workspace.Report.Create"');
     });
 
     program.parse(process.argv);

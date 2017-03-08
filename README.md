@@ -84,15 +84,15 @@ Updates connection strings and/or credentials for an existing dataset
 #### create-embed-token
 Creates a Power BI embed token.
 
-`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...] -s [scope1 scope2 ...]`
+`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -r <reportId> -u [username] --roles [roles1,roles2,...] -s [scope1 scope2 ...] -e <expiration>`
 
-`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -d <datasetId> -u [username] --roles [roles1,roles2,...] -s [scope1 scope2 ...]`
+`powerbi create-embed-token -c <collection> -k <accessKey> -w <workspaceId> -d <datasetId> -u [username] --roles [roles1,roles2,...] -s [scope1 scope2 ...] -e <expiration>`
 
 > Examples
 
 To create a Power BI embed token with specific user and one role:
 
-`powerbi create-embed-token -c <collection> -k <key>...key -w 06640...744d8f10  -r 07842...e30  -u "Ali Hamud" --roles "Developer"`
+`powerbi create-embed-token -c <collection> -k <key>...key -w 06640...744d8f10  -r 07842...e30  -u "Ali Hamud" --roles "Developer" -e "2020-01-01"`
 
 To create a Power BI embed token with specific user and multiple roles:
 

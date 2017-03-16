@@ -1,11 +1,11 @@
 {
   "globalDependencies": {
-    "node": "registry:dt/node#7.0.0+20170310052549"
+    "node": "registry:dt/node#7.0.0+20170310052549",
+    "lodash": "registry:dt/lodash#4.14.0+20161110215204"
   },
   "dependencies": {
     "colors": "registry:dt/colors#1.1.0+20161228000716",
     "commander": "registry:dt/commander#2.3.0+20161118092844",
-    "jwt-simple": "registry:dt/jwt-simple#0.5.0+20160727002439",
-    "lodash": "registry:dt/lodash#4.14.0+20170310062003"
+    "jwt-simple": "registry:dt/jwt-simple#0.5.0+20160727002439"
   }
 }

@@ -92,7 +92,7 @@ Creates a Power BI embed token.
 
 To create a Power BI embed token with specific user and one role:
 
-`powerbi create-embed-token -c <collection> -k <key>...key -w 06640...744d8f10  -r 07842...e30  -u "Ali Hamud" --roles "Developer" -e "2020-01-01"`
+`powerbi create-embed-token -c <collection> -k <key>...key -w 06640...744d8f10  -r 07842...e30  -u "Ali Hamud" --roles "Developer" -e "03-02-2018 15:03:54 UTC"`
 
 To create a Power BI embed token with specific user and multiple roles:
 

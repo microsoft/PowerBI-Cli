@@ -11,7 +11,18 @@
   "license": "MIT",
   "preferGlobal": true,
   "bin": {
-    "powerbi": "./bin/cli"
+    "powerbi": "./bin/cli",
+    "powerbi-clone-report": "./bin/cli-clone-report",
+    "powerbi-config": "./bin/cli-config",
+    "powerbi-create-embed-token": "./bin/cli-create-embed-token",
+    "powerbi-create-workspace": "./bin/cli-create-workspace",
+    "powerbi-delete-dataset": "./bin/cli-delete-dataset",
+    "powerbi-get-datasets": "./bin/cli-get-datasets",
+    "powerbi-get-reports": "./bin/cli-get-reports",
+    "powerbi-get-workspaces": "./bin/cli-get-workspaces",
+    "powerbi-import": "./bin/cli-import",
+    "powerbi-rebind-report": "./bin/cli-rebind-report",
+    "powerbi-update-connection": "./bin/cli-update-connection"
   },
   "dependencies": {
     "colors": "^1.1.2",

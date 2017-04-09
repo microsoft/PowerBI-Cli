@@ -19,7 +19,8 @@ export default function CliCreateEmbedToken() {
         .option('-d, --dataset <datasetId>', 'The Power BI dataset id')
         .option('-s, --scopes [scopes]', 'The permission scopes allowed')
         .option('-u, --username [username]', 'The RLS username')
-        .option('--roles [roles]', 'The RLS roles', list);
+        .option('--roles [roles]', 'The RLS roles', list)
+        .option('-e, --expiration <expiration>', 'The token expiration date');
 
     program.on('--help', function () {
         console.log('  Examples:');
@@ -51,7 +52,8 @@ export default function CliCreateEmbedToken() {
             if (!(settings.report || settings.dataset)) {
                 return cli.error('Either reportId or datasetId must be set');
             }
-            token = powerbi.PowerBIToken.createReportEmbedToken(settings.collection, settings.workspace, settings.report, settings.dataset, settings.scopes, settings.username, settings.roles);
+            let expiration = settings.expiration ? new Date(settings.expiration) : void 0;
+            token = powerbi.PowerBIToken.createReportEmbedToken(settings.collection, settings.workspace, settings.report, settings.dataset, settings.scopes, settings.username, settings.roles, expiration);
 
             let jwt = token.generate(settings.accessKey);
             cli.success('Embed Token: ', jwt);

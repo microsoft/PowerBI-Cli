@@ -1,7 +1,7 @@
 {
   "globalDependencies": {
     "lodash": "registry:dt/lodash#4.14.0+20161110215204",
-    "node": "registry:dt/node#7.0.0+20170310052549"
+    "node": "registry:dt/node#7.0.0+20170322231424"
   },
   "dependencies": {
     "colors": "registry:dt/colors#1.1.0+20161228000716",

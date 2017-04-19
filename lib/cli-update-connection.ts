@@ -42,19 +42,19 @@ export default function CliUpdateConnection() {
                 cli.success('Found dataset!');
                 cli.print('Id: %s', result.id);
                 cli.print('Name: %s', result.name);
-
-                if (settings.connectionString) {
-                    updateConnectionString(client, settings, function (updateConnectionStringError) {
-                        if (updateConnectionStringError) {
-                            return cli.error(updateConnectionStringError);
-                        }
-                    });
-                }
-
+                
                 if (settings.username && settings.password) {
                     updateCredentials(client, settings, function (updateCredentialsError) {
                         if (updateCredentialsError) {
                             return cli.error(updateCredentialsError);
+                        }
+                    });
+                }
+                
+                if (settings.connectionString) {
+                    updateConnectionString(client, settings, function (updateConnectionStringError) {
+                        if (updateConnectionStringError) {
+                            return cli.error(updateConnectionStringError);
                         }
                     });
                 }

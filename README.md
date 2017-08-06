@@ -1,3 +1,6 @@
+# Deprecation notice
+Power BI Cli is deprecated and is no longer supported.
+
 # powerbi-cli
 Power BI command line interface for managing Power BI Embedded workspace collections
 

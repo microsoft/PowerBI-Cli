@@ -9,18 +9,26 @@ git clone https://github.com/Microsoft/PowerBI-Cli.git powerbi-cli
 
 Navigate to the cloned directory
 
-Install typescript and local dependencies - you need to run it only once.
+Install dependencies and dev-dependencies.
 ```
-npm run precontrib
+npm i
 ```
 
 ## Build:
 
 ```
-npm run contrib
+npm run prepublish
 ```
 
-## Running the CLI
+## Install CLI from local repository:
+
+In root git repository directory:
+
+```
+npm i -g
+```
+
+## Running the CLI without installation
 
 Navigate to `/bin` directory and run cli file using node.
 
@@ -28,7 +36,7 @@ Navigate to `/bin` directory and run cli file using node.
 cd bin & node cli
 ```
 
-## Running specific command:
+### Running specific command:
 
 Navigate to `/bin` directory and run specific cli file using node.
 Example:
